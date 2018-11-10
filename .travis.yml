@@ -7,6 +7,8 @@ jobs:
   include:
   - stage: Tests
     script: ".travis/ci"
+addons:
+  ssh_known_hosts: dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:35279
 deploy:
   provider: script
   script: bash .travis/deploy
