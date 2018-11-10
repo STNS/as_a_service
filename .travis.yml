@@ -6,7 +6,7 @@ jobs:
   - stage: Tests
     script: ".travis/ci"
 addons:
-  ssh_known_hosts: dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp
+  ssh_known_hosts: dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:35279
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_<...>_key -iv $encrypted_<...>_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 - eval "$(ssh-agent -s)"
