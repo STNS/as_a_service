@@ -1,4 +1,7 @@
-language: centos
+sudo: required
+before_install:
+  - sudo apt-get update -q
+  - sudo apt-get -qqy install curl sudo
 jobs:
   include:
   - stage: Tests
