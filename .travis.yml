@@ -1,6 +1,6 @@
 before_install:
-  - sudo apt-get update -q
-  - sudo apt-get -qqy install curl sudo
+- sudo apt-get update -q
+- sudo apt-get -qqy install curl sudo
 jobs:
   include:
   - stage: Tests
@@ -10,4 +10,4 @@ jobs:
     script: ".travis/deploy"
 env:
   global:
-    secure: mquWTKhcAw7TAO11qWWLeN3J1UHGjyCoR2nJYThQYfAUFJbadqMn0KhLMSeKYeCClvoXx4YaZIb8uDzI1CIvb4y2pNp7zWJsmfwS6Rdii221e3CVI+7ZTo88fYSSe6Cunmq5Ftf/oqpUrtipKeRjPjwXo2S+WNfn+GFdm+vytGwHQJ70Io33lMghMTn5OXnMq6pa3K1lX/si68deo8izEk/b3pcMh0hLSulV2jGamldEFOoe3OMioT73iaJPgiwQnmP17KPfe7tzC5UowApPwB5OP92D5ltTv91sprQ7maRHCGhoNJ3c8gxgNganUKhWT2AkGW3OmLeE9VUYcSugBeNfcHppa7zZSJuIeZdCjRRKEutFDJAk+RDhxC5v861PirfWarogZqeL9m5xznBgGNQXvu92AlaiI/AbcnWdkmWpFRVrmCqRo96HzRJDJ5j79NwzFQgi8u6mj0D+nsRV5o+Wyh/7HcjspxZHRrLGYzCDw/5BiDwRVaSz+ofgK9qbIVAiI/XrMa87ZsZzVhHi5hDtG7JJxuThK7o7xFnHYPODdSZN8TWYtNK1PsygwY4kyoPthK1uM048lqv4KWqhYkMH3/lOJOCrc34bHfvYUjemL7aBdhcWe0WBKzWXk7xwk1D2hCes9D0DejJoKnZGqRF5s6/B8M+lv/adVeytOSo=
+    secure: emWux7lzvx3RP5YuYUr/nziPpZW733ozk+4s6b9r69hgcxFr97sinVWe4m8LlPKe9d87K7VVXusGhbA8jkj8j5XNpfkwAig0Zf+lA4m4LiZZwWnqEUQhDRXlx76+8AkDH8J0b/H41ZZ/z9Oz3nNMJ2ARXbu+pNBnex6ZWZK6PfgbI+9QytLNGprcDm+yp0GRDGl56BBSUiElawPrJAu3youDOD1xW9U8CLutKRalhgC0hA9Koa+yYrqdiL9QFBbh808jAWO0HYqpltlolEW3XmGQU7cm2RGGAOLe0DH1zgJmDAR5EwMXaAa99Uon7+A8Amxu+K14r3B6uSg8fKhPITXAgk+A51VtpDopbp9RBd/ImgX4/s8vmirJskGAKMIwOJh1IHsicFrkbnW66UqKGZlLnYTnWS4JYdc8hvecjlB9w62b+C+wfg6qpiITrIRlunFfffJcAI0+caOp8HWWoT3EsAR835DfL0UPqYL5BQ2EQYRCXcioXkC+lmArGH6Pu924biHN6AFW9V82PWJmmT6C2uikn7MkDRiYRFtqCM5cAJJXDEK+59YsdpDP3vdcLPQZj2APyXoOdHHAzvuXwnW7+Tf7rxfQcUpywTaHY6LE++1H/ozyEa0uIZXFiDwiA0zVe/mrf+ICjRDVdJ2zUjaI5wCbaie1xoxCW2wsx1I=
