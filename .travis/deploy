@@ -1,8 +1,7 @@
 #!/bin/bash
-echo -e "Host dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp\n\tPort 35279\n\tStrictHostKeyChecking no\nIdentityFile ~/.ssh/deploy.key\n" >> ~/.ssh/config
-openssl aes-256-cbc -k "$secret" -in .travis/deploy_key.enc -d -a -out deploy.key
-cp deploy.key ~/.ssh/
-chmod 600 ~/.ssh/deploy.key
+echo -e "Host dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp\n\tPort 35279\n\tStrictHostKeyChecking no\nIdentityFile ~/.ssh/deploy_rsa\n" >> ~/.ssh/config
+cp deploy_rsa ~/.ssh/
+chmod 600 ~/.ssh/deploy_rsa
 scp -P 35279 stns.conf dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:/var/app
 scp -P 35279 users.conf dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:/var/app
 scp -P 35279 groups.conf dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:/var/app
