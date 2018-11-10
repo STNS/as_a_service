@@ -11,6 +11,7 @@ addons:
   ssh_known_hosts: dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:35279
 deploy:
   provider: script
+  skip_cleanup: true
   script: bash .travis/deploy
   on:
     branch: master
