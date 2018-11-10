@@ -1,15 +1,13 @@
 language: centos
-after_success:
-- echo -e "Host dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp\n\tPort 35279\n\tStrictHostKeyChecking
-  no\nIdentityFile ~/.ssh/deploy.key\n" >> ~/.ssh/config
-- openssl aes-256-cbc -k "$secret" -in .travis/deploy_key.enc -d -a -out deploy.key
-- cp deploy.key ~/.ssh/
-- chmod 600 ~/.ssh/deploy.key
-- scp -P 35279 users.conf dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:/var/app
-- scp -P 35279 groups.conf dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:/var/app
-branches:
-  except:
-  - master
+jobs:
+  include:
+    - stage: "Tests"
+      name: "Unit Tests"
+      script: true
+    - stage: deploy
+      if: branch = master
+      name: "Deploy to GCP"
+      script: ./deploy
 env:
   global:
     secure: W76ZscDXS3iBGCNGoZYR/UjXlKlbWctRhHkmCNV6V3JOsVIDsjzDY2d3MBnGT16Lbr8gWQQl+PZXd25XjEuLCgD3H1ib0k0VRaHjaWkzEVgoRe/ta5VCJ+MD8E5WTvCKzm+Q7sVKLVgH5EP/0emjIszkPc+MLAbr6TQ4oVeYEwJoL515HlXl6dhXAjCw+vX9JPwHb40QYSO823FaG+eGGUJ7Jr7MfVT3DmSIJc3eOWtWPmFaoJa487Sj2x6LWyNp0aorOOgex9Syw1yLjVZhQUESsEBhYblJ0JEhQlTj1rwH2ODgM1a2EapHOAXxh1sbRRi5rSdHZkZPoJmjHcFmcR4aXhzHZZwf5EtZJybajX5BHc78XMMNgbQf2QJJCwqBmva3t1BZA0ixmGKOF2DFCT2IQZ/Io5yV1yw6YT28yfAwz0FMUd22NXNeytL0yeRir5m1lX95II/pDVrfK7DaC42UxmPcg2CkrNEgnGbzld6WMmAjdpYNNVfJzd0Jxn5zFWumI6WDHXRlMKbK6QdoOuSDCVvZH8pP9/KUluWEfDC1RiuJmHQt8MjdeNV0NosFp+u2ihqQLJm1FSvJrx6BEchGdhvTSND5OjbJ/RF7NIxEnXzzUvsYBjms0U5rVPH4ZuOZ8oP3reZQFCxF8MN1QqCmpwAfB3fHCt+frtEq0WI=
