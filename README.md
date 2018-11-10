@@ -1,5 +1,5 @@
 # STNS as a Service
-
+[![Build Status](https://travis-ci.org/STNS/as_a_service.svg?branch=master)](https://travis-ci.org/STNS/as_a_service)
 STNSを利用した、Linux名前解決のSaaSを[ロリポップ！マネージドクラウド](https://mc.lolipop.jp)で提供しています。このリポジトリを利用することでどなたでもSTNSを利用することが出来ます。
 
 # PR方法
