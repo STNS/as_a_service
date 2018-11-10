@@ -5,9 +5,8 @@ jobs:
   include:
   - stage: Tests
     script: ".travis/ci"
-  - stage: deploy
-    if: branch = master
-    script: ".travis/deploy"
-env:
-  global:
-    secure: emWux7lzvx3RP5YuYUr/nziPpZW733ozk+4s6b9r69hgcxFr97sinVWe4m8LlPKe9d87K7VVXusGhbA8jkj8j5XNpfkwAig0Zf+lA4m4LiZZwWnqEUQhDRXlx76+8AkDH8J0b/H41ZZ/z9Oz3nNMJ2ARXbu+pNBnex6ZWZK6PfgbI+9QytLNGprcDm+yp0GRDGl56BBSUiElawPrJAu3youDOD1xW9U8CLutKRalhgC0hA9Koa+yYrqdiL9QFBbh808jAWO0HYqpltlolEW3XmGQU7cm2RGGAOLe0DH1zgJmDAR5EwMXaAa99Uon7+A8Amxu+K14r3B6uSg8fKhPITXAgk+A51VtpDopbp9RBd/ImgX4/s8vmirJskGAKMIwOJh1IHsicFrkbnW66UqKGZlLnYTnWS4JYdc8hvecjlB9w62b+C+wfg6qpiITrIRlunFfffJcAI0+caOp8HWWoT3EsAR835DfL0UPqYL5BQ2EQYRCXcioXkC+lmArGH6Pu924biHN6AFW9V82PWJmmT6C2uikn7MkDRiYRFtqCM5cAJJXDEK+59YsdpDP3vdcLPQZj2APyXoOdHHAzvuXwnW7+Tf7rxfQcUpywTaHY6LE++1H/ozyEa0uIZXFiDwiA0zVe/mrf+ICjRDVdJ2zUjaI5wCbaie1xoxCW2wsx1I=
+deploy:
+  provider: script
+  script: bash .travis/deploy
+  on:
+    branch: master
