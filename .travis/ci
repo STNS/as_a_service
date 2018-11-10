@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e -x
 curl -fsSL https://repo.stns.jp/scripts/apt-repo.sh | sh
-apt install -qqy stns-v2
+sudo apt install -qqy stns-v2
 stns --config stns.conf checkconf
