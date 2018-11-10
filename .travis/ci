@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e -x
+curl -fsSL https://repo.stns.jp/scripts/yum-repo.sh | sh
+yum -y install stns-v2
+stns --config stns.conf checkconf

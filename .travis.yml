@@ -2,12 +2,10 @@ language: centos
 jobs:
   include:
   - stage: Tests
-    name: Unit Tests
-    script: true
+    script: ".travis/ci"
   - stage: deploy
     if: branch = master
-    name: Deploy to GCP
-    script: "./deploy"
+    script: ".travis/deploy"
 env:
   global:
-    secure: RYDn9p6jDLwGSzqFtyVQ2RBHgYL9ql31t5uMUKaqB3aSKulwXNjaDj5MRxXXgJA3FL4lNkzsF57MSH47+DGuDCMug7XJ8/9BchkxcbXdknrMCbId4oCGKlBid2YKL8ooye+8Nt6jPevK+iuunEpmPMhXFLsayAKG8PT41L+gwdKqohq+l6f5huSTlExn3E5ddWEFOr4gzcFxHlBOPVtRHa2ww9A3xmZ1pKYES1fbrOgDs0t5TBwDyH45L0SToG86SF13RSTZo5t4HviwZ3uKD4MGuaa6hgCZeRPYnPAUWG96b+RWxisFbI5BRSF1LjO2OpC+gUuerDPFiBLHJeQZYlScT66TVwwGSXWglDNlnS4ER+bSBdm5ue/2t3S4ZPKpDHp4q9xDam7d3TjbYZ4woLSYB1NPzogjjQWlwCRgqn/vyngcMme2jYB/mU1EN9cTP/m8yLmc7dK5iSGgpinZPxOKdYgrcbcTveWu1XVPY5AiB2YOpbrMtNYHMjHvOeSRJQyDFK+NuKBMTMhB7DnZDU6vJeIRySMSIVYjQj0/8rrnM+yQO+JsxPEqsZ2QFAKPM9scOPtbWAbfUm/nUD94ACcFRqoIM27z6n2p9WyH8//Yo2RKSoXgkov9JjRw9xyQUTcDjHQ3O23YD+Q8phgvQd0pWY4jKjVyB31X0cfWbL4=
+    secure: mquWTKhcAw7TAO11qWWLeN3J1UHGjyCoR2nJYThQYfAUFJbadqMn0KhLMSeKYeCClvoXx4YaZIb8uDzI1CIvb4y2pNp7zWJsmfwS6Rdii221e3CVI+7ZTo88fYSSe6Cunmq5Ftf/oqpUrtipKeRjPjwXo2S+WNfn+GFdm+vytGwHQJ70Io33lMghMTn5OXnMq6pa3K1lX/si68deo8izEk/b3pcMh0hLSulV2jGamldEFOoe3OMioT73iaJPgiwQnmP17KPfe7tzC5UowApPwB5OP92D5ltTv91sprQ7maRHCGhoNJ3c8gxgNganUKhWT2AkGW3OmLeE9VUYcSugBeNfcHppa7zZSJuIeZdCjRRKEutFDJAk+RDhxC5v861PirfWarogZqeL9m5xznBgGNQXvu92AlaiI/AbcnWdkmWpFRVrmCqRo96HzRJDJ5j79NwzFQgi8u6mj0D+nsRV5o+Wyh/7HcjspxZHRrLGYzCDw/5BiDwRVaSz+ofgK9qbIVAiI/XrMa87ZsZzVhHi5hDtG7JJxuThK7o7xFnHYPODdSZN8TWYtNK1PsygwY4kyoPthK1uM048lqv4KWqhYkMH3/lOJOCrc34bHfvYUjemL7aBdhcWe0WBKzWXk7xwk1D2hCes9D0DejJoKnZGqRF5s6/B8M+lv/adVeytOSo=
