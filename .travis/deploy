@@ -3,6 +3,7 @@ set -e -x
 echo -e "Host dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp\n\tPort 35279\n\tStrictHostKeyChecking no\nIdentityFile ~/.ssh/deploy_rsa\n" >> ~/.ssh/config
 cp /tmp/deploy_rsa ~/.ssh/
 chmod 600 ~/.ssh/deploy_rsa
-scp -P 35279 stns.conf dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:/var/app
-scp -P 35279 users.conf dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:/var/app
-scp -P 35279 groups.conf dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:/var/app
+for n in stns users groups
+do
+  scp -i ~/.ssh/deploy_rsa -P 35279 $n.conf dark-hitoyoshi-1876@ssh-1.mc.lolipop.jp:/var/app
+done
