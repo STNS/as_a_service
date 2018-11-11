@@ -15,3 +15,5 @@ deploy:
   script: bash .travis/deploy
   on:
     branch: master
+notifications:
+  slack: pepabo:CQkcN0cdvPSJvVsK2D48qYyV
