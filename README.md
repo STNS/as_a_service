@@ -43,7 +43,7 @@ $ vi /etc/ssh/sshd_config
 $ cat /etc/ssh/sshd_config
 AllowUsers pyama
 AuthorizedKeysCommand /usr/lib/stns/stns-key-wrapper
-AuthorizedKeysCommandRunAs root
+AuthorizedKeysCommandUser root
 ChallengeResponseAuthentication no
 PasswordAuthentication no
 PermitRootLogin no
